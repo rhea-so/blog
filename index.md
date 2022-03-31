@@ -2,8 +2,17 @@
 
 ## Contents
 
+* GraphQL
+  * [Federation과 MSA에 대한 생각](https://moonsupport.oopy.io/post/14)
+  * [GraphQL Schema Basics](https://www.apollographql.com/docs/apollo-server/schema/schema/#the-query-type)
 * DDD
   * [ddd-forum](https://github.com/stemmlerjs/ddd-forum) (DDD Best Practices, Typescript Project)
+  * [khalilstemmler](https://khalilstemmler.com/) (DDD 잘하는 사람)
+  * [백엔드 서버 아키텍처](https://tech.junhabaek.net/%EB%B0%B1%EC%97%94%EB%93%9C-%EC%84%9C%EB%B2%84-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-domain-layer1-domain-layer%EC%99%80-ddd-e97a7587a7b0)
 * Kubernetes
-  * [kubernetes HPA auto scaling](https://rhea-so.github.io/k3s-auto-scaling/document/01_AutoScaling%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0.html)
-  * [kubernetes zero downtime deployment](https://rhea-so.github.io/k3s-zero-downtime-deployment/document/01_WhyWeNeed.html)
+  * [😎 kubernetes HPA auto scaling](https://rhea-so.github.io/k3s-auto-scaling/document/01_AutoScaling%EC%9D%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0.html)
+  * [😎 kubernetes zero downtime deployment](https://rhea-so.github.io/k3s-zero-downtime-deployment/document/01_WhyWeNeed.html)
+* ETC
+  * [1년차, 2년차, 3년차, 5년차, 10년차의 Hello World](https://blog.naver.com/agapeuni/222082056525)
+
+> 😎 = 저자가 본인임
