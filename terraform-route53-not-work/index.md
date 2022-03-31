@@ -15,7 +15,7 @@ resource "aws_route53_record" "domain" {
   zone_id = aws_route53_zone.domain.zone_id
   name = "rhea-so.com"
   type = "A"
-  ttl = var.ttl
+  ttl = "300"
   records = ["52.78.144.248"]
   allow_overwrite = true
 }
@@ -27,12 +27,12 @@ resource "aws_route53_record" "domain" {
 
 ## 원인 및 해결 방법
 
-![reason_1](images/reason_1.png)
+![reason_1](./images/reason_1.png)
 
 AWS 도메인에 보면 이름 서버가 명시되어있는데,
 
 이 값이 Terraform을 통해 만들어진 Zone과 서로 달라서 발생한 문제였습니다.
 
-![reason_2](images/reason_2.png)
+![reason_2](./images/reason_2.png)
 
 Zone에 명시되어있는 이름 서버 주소를 AWS 도메인에 설정해주면 문제는 해결됩니다!
