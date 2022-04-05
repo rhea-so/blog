@@ -2,6 +2,8 @@
 
 ## Contents
 
+### Posts
+
 * GraphQL
   * [Federation과 MSA에 대한 생각](https://moonsupport.oopy.io/post/14)
   * [GraphQL Schema Basics](https://www.apollographql.com/docs/apollo-server/schema/schema/#the-query-type)
@@ -18,5 +20,9 @@
   * [😎 terraform에서 만든 route53에 연결할 수 없는 경우](./terraform-route53-not-work/index.md)
 * ETC
   * [1년차, 2년차, 3년차, 5년차, 10년차의 Hello World](https://blog.naver.com/agapeuni/222082056525)
+
+### Videos
+
+* [배달의 민족의 분산 처리 방법](https://www.youtube.com/watch?v=PvAlbOm9WN8&list=PLgXGHBqgT2TtGi82mCZWuhMu-nQy301ew)
 
 > 😎 = 저자가 본인임
