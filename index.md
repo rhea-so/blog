@@ -26,3 +26,11 @@
 * [배달의 민족의 분산 처리 방법](https://www.youtube.com/watch?v=PvAlbOm9WN8&list=PLgXGHBqgT2TtGi82mCZWuhMu-nQy301ew)
 
 > 😎 = 저자가 본인임
+
+## Todo
+
+* TypeORM Relation 정리 (one to one, one to many, many to one, many to many, join column, join table)
+* Mocking 방법 정리
+* DDD 공부 및 정리
+* GraphQL Federation 정리
+* 코드 리뷰 과정 정리
