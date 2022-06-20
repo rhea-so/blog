@@ -6,6 +6,8 @@ date: 2022-06-20
 
 ![100-explicit-architecture-svg.png](./100-explicit-architecture-svg.png)
 
+> DDD 구성 요소
+
 ## 도메인 주도 설계란 무엇인가?
 
 "도메인" + "지식에 초점을 맞춘" 설계 기법
@@ -44,3 +46,8 @@ date: 2022-06-20
    2. 도메인 분야의 관계자는 도메인의 개념에 대한 지식은 있어도 소프트웨어에 대한 지식은 없다
    3. 반면 개발자는 소프트웨어에 대한 지식은 있어도 도메인 개념에 대한 지식이 없다
    4. 도메인 문제를 해결하는 소프트웨어를 만들려면 각 분야의 두 사람이 협력하여 도메인 모델을 만들어야 한다
+
+## 참고
+
+* [도메인 주도 설계 철저 입문](http://www.yes24.com/Product/Goods/93384475)
+* [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
