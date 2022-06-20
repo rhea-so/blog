@@ -1,23 +1,5 @@
-# rhea-so tech blog
+# Contents
 
-## Contents
+## Book Journal
 
-### Posts
-
-* GraphQL
-  * [Federation과 MSA에 대한 생각](https://moonsupport.oopy.io/post/14)
-  * [GraphQL Schema Basics](https://www.apollographql.com/docs/apollo-server/schema/schema/#the-query-type)
-* DDD
-  * [ddd-forum](https://github.com/stemmlerjs/ddd-forum) (DDD Best Practices, Typescript Project)
-  * [khalilstemmler](https://khalilstemmler.com/) (DDD 잘하는 사람)
-  * [백엔드 서버 아키텍처](https://tech.junhabaek.net/%EB%B0%B1%EC%97%94%EB%93%9C-%EC%84%9C%EB%B2%84-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-domain-layer1-domain-layer%EC%99%80-ddd-e97a7587a7b0)
-* Atlantis
-  * [😎 atlantis 시도기](./atlantis-tried/index.md)
-* Terraform
-  * [😎 terraform에서 만든 route53에 연결할 수 없는 경우](./terraform-route53-not-work/index.md)
-* ETC
-  * [1년차, 2년차, 3년차, 5년차, 10년차의 Hello World](https://blog.naver.com/agapeuni/222082056525)
-
-### Videos
-
-* [배달의 민족의 분산 처리 방법](https://www.youtube.com/watch?v=PvAlbOm9WN8&list=PLgXGHBqgT2TtGi82mCZWuhMu-nQy301ew)
+* [도메인 주도 설계 철저 입문](./도메인_주도_설계_철저_입문/review.md) ([YES24](http://www.yes24.com/Product/Goods/93384475))
