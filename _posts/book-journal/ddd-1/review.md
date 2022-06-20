@@ -1,3 +1,13 @@
+---
+layout: post
+title: "도메인 주도 설계 철저 입문"
+date: 2022-06-20 12:00:00 
+lastmod : 2022-06-20 12:00:00
+sitemap :
+  changefreq : daily
+  priority : 1.0
+---
+
 ![100-explicit-architecture-svg.png](./100-explicit-architecture-svg.png)
 
 ## 도메인 주도 설계란 무엇인가?

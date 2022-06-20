@@ -2,4 +2,4 @@
 
 ## Book Journal
 
-* [도메인 주도 설계 철저 입문](posts/book-journal/도메인_주도_설계_철저_입문/review.md) ([YES24](http://www.yes24.com/Product/Goods/93384475))
+* [도메인 주도 설계 철저 입문](_posts/book-journal/ddd-1/review.md) ([YES24](http://www.yes24.com/Product/Goods/93384475))
