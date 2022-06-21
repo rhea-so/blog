@@ -76,6 +76,185 @@ date: 2022-06-20
    1. 애그리게이트
    2. 명세
 
+## 지식 표현을 위한 패턴
+
+### 값 객체란?
+
+시스템 특유의 값을 나타내는 객체
+
+Value Object 라고도 부른다
+
+예:
+
+```typescript
+String("hello, world!");
+Number(1);
+new Name("Kim", "JeongHyeon");
+```
+
+#### 특징:
+1. 변하지 않는다
+   ```typescript
+   "hello, world!".changeTo("hi, there"); // 실제로 이런 메서드는 존재하지 않는다
+   console.log("hello, world!"); // "hi, there"이 출력될 수 없다
+   // "hello, world!"는 그 자체로써 변경될 수 없는 값이다
+
+   let name = new Name("Kim", "JeongHyeon");
+   name.changeFirstName("Park"); // 이 메서드는 존재해서도 안되며, 동작해서도 안된다
+   ```
+2. 주고 받을 수 있다
+   ```typescript
+   name = new Name("Park", "JeongHyeon"); // 수정하고 싶으면, 새로운 값 객체를 만들어 넣으면 된다
+   // 즉, 값 객체를 주고 받을 수 있다는 뜻이다
+   ```
+3. 등가성을 비교할 수 있다
+   ```typescript
+   "hello, world!" == "hello, world!"; // true가 반환된다
+
+   "hello, world!".value == "hello, world!".value; // 굉장히 부자연스럽다, 이러면 안된다
+   
+   let name1 = new Name("Kim", "JeongHyeon");
+   let name2 = new Name("Kim", "JeongHyeon");
+
+   name1.equals(name2); // true가 반환된다
+
+   name1 == name2; // 연산자 오버라이드를 지원하는 언어의 경우, 이처럼 자연스럽게 표현할 수 있다
+
+   name1.firstName == name2.firstName; // 굉장히 부자연스럽다, 이러면 안된다
+   ```
+
+값 객체를 정의할때는 값 객체로 정의할 필요가 있는지를 먼저 판단하는 것이 중요하다
+
+예: Name 값 객체 안에 firstName, lastName도 값 객체로 만들어서 넣을 것인지? 아니면 원시 데이터로만 표현할 것인지?
+
+값 객체로 정의할 만한 가치가 있는 개념을 구현 중에 발견했다면, 그 개념은 도메인 모델로 피드백해야 한다
+
+4. 독자적인 행위를 정의할 수 있다
+   ```typescript
+   100 + 100; // 200이 반환된다
+
+   class Money {
+      amount: number;
+
+      constructor(amount: number) {
+         this.amount = amount;
+      }
+
+      add(money: Money) {
+         if (this.money.amount + money.amount > 1000) {
+            throw "1,000 보다 많은 돈을 가질 수 없다";
+         }
+
+         return new Money(this.money.amount + money.amount);
+      }
+   }
+
+   let money1 = new Money(100);
+   let money2 = new Money(100);
+
+   money1.add(money2); // new Money(200);이 반환된다
+
+   let money3 = new Money(10000);
+   money1.add(money3); // 에러가 발생한다
+   ```
+
+값 객체는 결코 데이터를 담는 것만이 목적인 구조체가 아니다
+
+값 객체는 데이터와 더불어 그 데이터에 대한 행동을 한 곳에 모아둠으로써 자신만의 규칙을 갖는 도메인 객체가 된다
+
+객체에 정의된 행위를 통해 이 객체가 어떤 일을 할 수 있는지 알 수 있다
+
+이를 반대로 생각하면 객체는 자신에게 정의되지 않은 행위는 할 수 없다는 말도 된다
+
+#### 도입시 장점:
+1. 표현력이 증가한다
+   ```typescript
+   let now = "2022-06-21 21:04:05"; // 타입이 문자열이라는 것만 알 수 있다
+
+   now.substr(0, 4); // 년도를 가져오고 싶으면 일일히 잘라내야 한다
+
+   let now = new Date({ // "년, 월, 일, 시, 분, 초"로 구성됨을 알 수 있다
+      year: "2022",
+      month: "06",
+      day: "21",
+      hour: "21",
+      minute: "04",
+      second: "05"
+   });
+
+   let now = new Date("2022-06-21 21:04:05"); // 값 객체 스스로가 문자열을 받으면 "년, 월, 일, 시, 분, 초"로 분리해서 사용한다고 했을때는, 이런 구현도 가능하다
+
+   now.year; // 정의가 명확하며, 이해가 잘된다
+   ```
+2. 무결성이 유지된다
+   ```typescript
+   let name = "ab";
+
+   if (name.length < 2) throw "이름은 무조건 두글자 초과여야 한다"; // name은 단순한 문자열이기 때문에 길이 보장을 해주지 않는다
+
+   // name을 쓰는 모든 곳에서 길이 확인을 해줘야 하는 대참사가 발생할 수 있다
+
+   class Name {
+      value: string;
+
+      constructor(value: string) {
+         if (value.length < 2) throw "이름은 무조건 두글자 초과여야 한다";
+         this.value = value;
+      }
+   }
+
+   let name = new Name("ab"); // Name 값 객체가 스스로 길이 보장을 해주기 때문에 안심하고 쓸 수 있다
+   ```
+3. 잘못된 대입을 방지한다
+   ```typescript
+   let now: string = "2022-06-21 21:04:05";
+
+   now = "hello, world!"; // 잘못된 대입을 할 수 있다
+
+   let now: Date = new Date("2022-06-21 21:04:05");
+
+   now = "hello, world!"; // 를 할 수 없다!
+   now = new Date("hello, world!"); // 이 또한 불가능하다, 값 객체는 무결성을 보장하기 때문이다
+
+   now = new Date("4044-12-21 21:04:05"); // 이 코드는 가능하다
+   ```
+4. 로직이 코드 이곳저곳에 흩어지는 것을 방지한다
+   ```typescript
+   function createUser(name: string) {
+      if (value.length < 2) throw "이름은 무조건 두글자 초과여야 한다";
+      return new User(name);
+   }
+
+   function updateUser(user: User, name: string) {
+      if (value.length < 2) throw "이름은 무조건 두글자 초과여야 한다";
+      return user.updateName(name);
+   }
+
+   // if 문이 반복되고 있다
+
+   function createUser(name: Name) {
+      return new User(name);
+   }
+
+   function updateUser(user: User, name: Name) {
+      return user.updateName(name);
+   }
+
+   // 이렇게 개선 할 수 있다
+   // Name의 유효성은 Name을 생성할때 검증되기 때문이다
+   // createUser, updateUser는 검증과 전혀 상관없이 본인 역할에 맞게 생성과 수정에 대한 책임만 가지면 된다
+
+   // 만약, Name 검증 길이 값이 2에서 3으로 증가한다면?
+   ```
+
+값 객체는 "시스템 고유의 값을 만드는" 단순한 것이다
+
+시스템에는 해당 시스템에서만 쓰이는 값이 반드시 있기 마련이다
+
+물론 원시 타입의 값만으로도 소프트웨어를 만들 수 있지만, 원시 타입은 지나치게 범용적이기 때문에 아무래도 표현력이 빈약하다
+
+도메인의 다양한 규칙을 값 객체 안에 기술하게 되면, 코드 자체가 문서의 역할을 할 수 있게 된다
+
 ## 참고
 
 * [도메인 주도 설계 철저 입문](http://www.yes24.com/Product/Goods/93384475)
