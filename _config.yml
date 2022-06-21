@@ -3,5 +3,12 @@ author: rhea-so
 logo: https://avatars.githubusercontent.com/u/25793226
 description: Tech blog & Uploading what I studied
 theme: jekyll-theme-minimal
+url: https://rhea-so.github.io/blog
+defaults:
+  -
+    scope:
+      path: google190d2c51081d1ee5.html
+    values:
+      sitemap: false
 plugins:
   - jekyll-sitemap
