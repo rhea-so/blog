@@ -141,7 +141,7 @@ new Name("Kim", "JeongHyeon");
       }
 
       add(money: Money) {
-         if (this.money.amount + money.amount > 1000) {
+         if (this.amount + money.amount > 1000) {
             throw "1,000 보다 많은 돈을 가질 수 없다";
          }
 
