@@ -484,6 +484,8 @@ let userService = new UserService();
 let user = new User("rhea");
 
 userService.isExist(user); // true or false, 자기 자신에게 동명이인 여부를 확인하거나 동명이인 여부 확인에만 사용되고 버려질 인스턴스를 만들 필요가 없어졌다
+
+// UserService를 싱글톤 패턴 등을 사용하여 계속해서 재사용할 수 있다
 ```
 
 도메인 서비스는 자신의 행동을 바꿀 수 있는 인스턴스만의 값을 갖지 않는다는 점에서 값 객체나 엔티티와 다르다
