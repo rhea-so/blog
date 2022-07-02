@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "2022년 상반기 - 사용 중인 도구"
+title: "2022년 상반기 - 사용 중인 도구들"
 date: 2022-07-3
 ---
 
-개발시 사용중인 능률을 올려주는 도구들
+개발시 사용중인 도구들
 
-## Mac Applications
+## Software - Mac Applications
 
 ### 1. AltTab
 
-https://alt-tab-macos.netlify.app/
+[https://alt-tab-macos.netlify.app](https://alt-tab-macos.netlify.app)
 
 맥을 사용하기 이전, 윈도우를 많이 사용한 나에게 있어서 맥의 "미션 컨트롤"이라는 기능은 굉장히 불편하다
 
@@ -47,7 +47,7 @@ Command + Tab 을 단축키로 지정하면 윈도우를 쓰는 듯한 착각을
 
 ### 2. Kawa
 
-https://github.com/hatashiro/kawa
+[https://github.com/hatashiro/kawa](https://github.com/hatashiro/kawa)
 
 개발하면서 테스트 코드에 일본어를 써야하는 케이스를 겪었는데,
 
@@ -63,7 +63,7 @@ Kawa를 사용하면, 특정 커맨드를 특정 키보드로 연결시키는 �
 
 ### 3. VSCodium
 
-https://github.com/VSCodium/vscodium
+[https://github.com/VSCodium/vscodium](https://github.com/VSCodium/vscodium)
 
 VSCode에서 Microsoft로 데이터를 보내는 기능들을 제거 후 포팅한 버전
 

@@ -6,7 +6,7 @@
 
 ## Workspace
 
-* [2022년 상반기 - 사용 중인 도구](workspace/2022-the-first-half-using-tools/review.md)
+* [2022년 상반기 - 사용 중인 도구들](workspace/2022-the-first-half-using-tools/review.md)
 
 ## Book Journal
 
