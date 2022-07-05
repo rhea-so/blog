@@ -15,5 +15,7 @@ defaults:
       path: feed.xml
     values:
       sitemap: false
+paginate: 5
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate-v2
