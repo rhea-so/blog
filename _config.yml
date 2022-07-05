@@ -3,7 +3,7 @@ author: rhea-so
 logo: https://avatars.githubusercontent.com/u/25793226
 description: Tech blog & Uploading what I studied
 theme: jekyll-theme-minimal
-url: https://rhea-so.github.io/
+url: https://rhea-so.github.io
 defaults:
   -
     scope:
