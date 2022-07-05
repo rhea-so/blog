@@ -3,7 +3,7 @@ author: rhea-so
 logo: https://avatars.githubusercontent.com/u/25793226
 description: Tech blog & Uploading what I studied
 theme: jekyll-theme-minimal
-url: https://rhea-so.github.io
+url: https://rhea-so.github.io/blog
 defaults:
   -
     scope:
@@ -16,7 +16,6 @@ defaults:
     values:
       sitemap: false
 paginate: 5
-paginate_path: "/blog/page:num/"
 plugins:
   - jekyll-sitemap
   - jekyll-paginate-v2
