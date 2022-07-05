@@ -10,5 +10,10 @@ defaults:
       path: google190d2c51081d1ee5.html
     values:
       sitemap: false
+  -
+    scope:
+      path: feed.xml
+    values:
+      sitemap: false
 plugins:
   - jekyll-sitemap
