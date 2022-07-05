@@ -17,4 +17,3 @@ defaults:
       sitemap: false
 plugins:
   - jekyll-sitemap
-  - jekyll-feed
